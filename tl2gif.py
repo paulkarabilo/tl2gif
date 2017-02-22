@@ -62,7 +62,7 @@ if __name__ == "__main__":
     parser.add_argument('-s', dest='step', type=int, required=False,
         default=100, help='time interval between frames, in ms')
     parser.add_argument('-f', dest='font', type=int, required=False,
-        default=100, help='time interval between frames, in ms')
+        default=100, help='path to font for timer')
     parser.add_argument('-fs', dest='fontsize', type=int, required=False,
-        default=100, help='time interval between frames, in ms')
+        default=100, help='font size for timer')
     main(parser.parse_args())
