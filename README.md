@@ -8,4 +8,4 @@ Usage:
 
 `python tl2gif.py -i /path/to/your/timelinedata.json -o /path/to/out.gif`
 
-![Example](https://raw.githubusercontent.com/paulkarabilo/timeline2gif/master/test/github.gif)
+![Example](https://raw.githubusercontent.com/paulkarabilo/tl2gif/master/test/github.gif)
