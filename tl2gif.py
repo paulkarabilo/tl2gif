@@ -11,6 +11,7 @@ class Frame:
         self.ts = ts
         self.index = i
 
+
 class FrameBuffer:
     def __init__(self, frames):
         self.frames = map(lambda (i, frame): Frame(frame[0], frame[1], i), enumerate(frames))
@@ -31,7 +32,7 @@ class FrameBuffer:
         while frame != None:
             im = Image.open(BytesIO(base64.b64decode(frame.base64)))
             dr = ImageDraw.Draw(im)
-            font = ImageFont.truetype("font.ttf", 24)
+            font = ImageFont.load_default()
             dr.rectangle([0, 0, 60, 30], (255, 255, 255))
             dr.text((0,0), "{} s".format(float(time) / 1000000.0), (0,0,0), font=font)
             del dr
@@ -60,9 +61,5 @@ if __name__ == "__main__":
     parser.add_argument('-o', dest='output', type=str, required=False,
         default='out.gif', help='Path to output gif image')
     parser.add_argument('-s', dest='step', type=int, required=False,
-        default=100, help='time interval between frames, in ms')
-    parser.add_argument('-f', dest='font', type=int, required=False,
-        default=100, help='time interval between frames, in ms')
-    parser.add_argument('-fs', dest='fontsize', type=int, required=False,
         default=100, help='time interval between frames, in ms')
     main(parser.parse_args())
